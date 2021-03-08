@@ -12,44 +12,46 @@ namespace blog_template_practice.Tests
 
         public ContentTests()
         {
-            sut = new Content();
+            //sut = new Content(1,"Content title", "This is the body of the blog content", "Blog author name");
         }
 
         [Fact]
         public void ContentContructor_Should_Set_Id()
         {
-            //int result = sut.Id;
+            int result = sut.ContentId;
 
-            //Assert.Equal(1, result);
+            Assert.Equal(1, result);
         }
 
         [Fact]
         public void ContentConstructor_Should_Set_Title()
         {
-            //string result = sut.Title;
+            string result = sut.Title;
 
-            //Assert.Equal("Content title", result);
+            Assert.Equal("Content title", result);
         }
 
         [Fact]
         public void ContentConstructor_Should_Set_Body()
         {
-            //string result = sut.Body;
+            string result = sut.Body;
 
-            //Assert.Equal("This is the body of the blog content", result);
+            Assert.Equal("This is the body of the blog content", result);
         }
 
         [Fact]
         public void ContentConstructor_Should_Set_Author()
         {
-            //string result = sut.Author;
+            string result = sut.Author;
 
-            //Assert.Equal("Blog author name", result);
+            Assert.Equal("Blog author name", result);
         }
 
         [Fact]
         public void ContentConstructor_Should_Set_PublishDate()
         {
+            
+
             //string result = sut.PublishDate;
 
             //Assert.Equal("10/13/2020", result);

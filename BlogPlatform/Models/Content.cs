@@ -12,17 +12,25 @@ namespace blog_template_practice.Models
         public string Body { get; set; }
         public DateTime PublishDate { get; set; }
         public string Category { get; set; }
-        public int ContentId { get; set; }
+        public int Id { get; set; }
+               
 
-        public Content(int contentId, string title, string body, string author, DateTime publishDate)
+        public Content()
         {
-            ContentId = contentId;
+            
+        }
+        public Content(int id, string title, string body, string author, DateTime publishDate)
+        {
+            Id = id;
             Title = title;
             Body = body;
             Author = author;
             PublishDate = publishDate;
-       
+            
         }
+      
+      
+       
     }
 
 

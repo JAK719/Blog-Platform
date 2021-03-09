@@ -17,5 +17,18 @@ namespace blog_template_practice.Controllers
             this.contentRepo = contentRepo;
         }
 
+        public ViewResult Index()
+        {
+            var contentList = contentRepo.GetAll();
+            return View(contentList);
+        }
+
+        public ViewResult Details(int id)
+        {
+            var content = contentRepo.GetById(id);
+
+            return View(content);
+        }
+
     }
 }

@@ -18,7 +18,7 @@ namespace blog_template_practice.Tests
         [Fact]
         public void CategoryContructor_Should_Set_Id()
         {
-            int result = sut.CatId;
+            int result = sut.Id;
 
             Assert.Equal(1, result);
         }
@@ -26,7 +26,7 @@ namespace blog_template_practice.Tests
         [Fact]
         public void CategoryConstructor_Should_Set_Name()
         {
-            string result = sut.CatName;
+            string result = sut.Name;
 
             Assert.Equal("Category name", result);
         }

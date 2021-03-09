@@ -12,13 +12,13 @@ namespace blog_template_practice.Tests
 
         public ContentTests()
         {
-            //sut = new Content(1,"Content title", "This is the body of the blog content", "Blog author name");
+            sut = new Content(1, "Content title", "This is the body of the blog content", "Blog author name",Convert.ToDateTime("10/13/2020"));
         }
 
         [Fact]
         public void ContentContructor_Should_Set_Id()
         {
-            int result = sut.ContentId;
+            int result = sut.Id;
 
             Assert.Equal(1, result);
         }
@@ -51,10 +51,9 @@ namespace blog_template_practice.Tests
         public void ContentConstructor_Should_Set_PublishDate()
         {
             
+            string result = sut.PublishDate.Date.ToString("MM/dd/yyyy");
 
-            //string result = sut.PublishDate;
-
-            //Assert.Equal("10/13/2020", result);
+            Assert.Equal("10/13/2020", result);
         }
 
     }

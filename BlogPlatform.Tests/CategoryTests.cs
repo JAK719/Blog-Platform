@@ -12,7 +12,7 @@ namespace blog_template_practice.Tests
 
         public CategoryTests()
         {
-            sut = new Category(1, "Category name");
+            sut = new Category(1, "CategoryId name");
         }
 
         [Fact]
@@ -28,7 +28,7 @@ namespace blog_template_practice.Tests
         {
             string result = sut.Name;
 
-            Assert.Equal("Category name", result);
+            Assert.Equal("CategoryId name", result);
         }
     }
 }

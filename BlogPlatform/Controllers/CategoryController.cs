@@ -16,7 +16,7 @@ namespace blog_template_practice.Controllers
         {
             this.categoryRepo = categoryRepo;
         }
-
+        [HttpGet]
         public ViewResult Index()
         {
             var catList = categoryRepo.GetAll();
@@ -30,6 +30,6 @@ namespace blog_template_practice.Controllers
 
             return View(category);
         }
-
+      
     }
 }

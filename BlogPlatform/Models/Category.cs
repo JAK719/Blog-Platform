@@ -10,9 +10,9 @@ namespace blog_template_practice.Models
     public class Category
     {
         public string Name { get; set; }
-        public string Content { get; set; }
         public int Id { get; set; }
-        public virtual ICollection<Content>Contents { get; set; }
+        public virtual ICollection<Content> Content { get; set; }
+
 
         public Category()
         {
@@ -20,9 +20,9 @@ namespace blog_template_practice.Models
         }
 
 
-        public Category(int id, string name)
+        public Category(int catId, string name)
         {
-            Id = id;
+            Id = catId;
             Name = name;
         }
 

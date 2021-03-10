@@ -30,5 +30,44 @@ namespace blog_template_practice.Controllers
             return View(content);
         }
 
+        public ViewResult Create()
+        {
+            return View(new Content());
+        }
+
+        [HttpPost]
+        public ActionResult Create(Content model)
+        {
+            contentRepo.Create(model);
+            ViewBag.Result = "You made a new post";
+
+            return View();
+        }
+
+        public ViewResult Update(int id)
+        {
+            var category = contentRepo.GetById(id);
+
+            return View(category);
+        }
+
+        [HttpPost]
+        public ViewResult Update(Content model)
+        {
+            contentRepo.Update(model);
+            ViewBag.Result = "You updated your post.";
+
+            return View();
+        }
+
+        public ActionResult Delete(int id)
+        {
+            var content = contentRepo.GetById(id);
+
+            contentRepo.Delete(content);
+
+            return RedirectToAction("Index");
+        }
+
     }
 }

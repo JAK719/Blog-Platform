@@ -8,10 +8,12 @@ namespace blog_template_practice.Repositories
 {
     public class ContentRepository : Repository<Content>, IRepository<Content>
     {
+        public BlogContext _db;
         public ContentRepository(BlogContext db) : base(db)
         {
-
+            
         }
+
 
     }
 }

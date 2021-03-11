@@ -1,0 +1,32 @@
+﻿@model blog_template_practice.Models.Category
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <h1>@Model.Name</h1>
+
+    @foreach (var content in Model.Content)
+    {
+        <h2>@content.Title</h2>
+            <p>@content.Author</p>
+            <p>@content.Body</p>
+            <p>@content.PublishDate</p>
+            <a href="/Content/Update/@content.Id">Update</a>
+            <a href="/Content/Delete/@content.Id">Delete</a>
+    }
+    <p>
+    <a href="/Content/Create/?categoryId=@Model.Id">Wite a Post</a>
+    </p>
+
+
+</body>
+</html>

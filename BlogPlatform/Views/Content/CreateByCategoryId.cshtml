@@ -1,6 +1,5 @@
 ﻿@model blog_template_practice.Models.Content
 @addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
-
 @{
     Layout = null;
 }
@@ -10,7 +9,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Create</title>
+    <title>CreateByCategoryId</title>
     <link rel="stylesheet" type="text/css" href="~/styles/CRUDStyleSheet.css" />
 </head>
 <body>
@@ -19,9 +18,7 @@
     <hr />
     <div class="row">
         <div class="col-md-4">
-            <form class="submissionForm" asp-action="Create">
-                <div class="text-success">@ViewBag.Result</div>
-
+            <form asp-action="CreateByCategoryId">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <div class="form-group">
                     <label asp-for="Title" class="control-label"></label>
@@ -49,10 +46,11 @@
         </div>
     </div>
 
-           
-    <p>
-        <a href="/Category/Index">Back to List</a>
-    </p>    
+    <div>
+        <a href="/Category/Details/@Model.CategoryId">Back to List</a>
+        @*<a href="/Category/Details/@Model.Category.Id">Back to List</a>*@
+
+    </div>
 
     @section Scripts {
         @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

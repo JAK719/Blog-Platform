@@ -8,11 +8,21 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Categories</title>
+    <title>Details</title>
+    <link rel="stylesheet" type="text/css" href="~/styles/MainStyleSheet.css" />
 </head>
 <body>
+    <header>
+        <div class="headerContent">
+            <h1>Jason's Random Blog</h1>
+            <h2>Choose Your Topic</h2>
+        </div>
+    </header>
 
-    <h1>Categories</h1>
+    <nav>
+        <a href="/Category/Index/">Home</a>
+        <a href="/Content/Create/">Write a Post</a>
+    </nav>
 
     <hr />
 
@@ -20,7 +30,7 @@
     {
         <h2><a href="/Category/Details/@category.Id">@category.Name</a></h2>
     }
-   
+
 
 </body>
 </html>

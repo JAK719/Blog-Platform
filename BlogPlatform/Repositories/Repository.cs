@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using blog_template_practice.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace blog_template_practice.Repositories
 {
-    public class Repository<T> where T : class
+    public class Repository<T> : IRepository<T> where T : class
     {
         private DbContext db;
 
@@ -42,5 +43,12 @@ namespace blog_template_practice.Repositories
             db.Set<T>().Remove(entity);
             db.SaveChanges();
         }
+
+        public List<Category> PopulateCategoryList()
+        {
+            return db.Set<Category>().ToList();
+
+        }
+
     }
 }

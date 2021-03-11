@@ -22,7 +22,7 @@ namespace blog_template_practice.Controllers
         {
             var categories = contentRepo.PopulateCategoryList();
 
-            ViewBag.Category = new SelectList(categories, "Id", "Name");
+            ViewBag.Category = categories;
         }
 
         
@@ -40,23 +40,23 @@ namespace blog_template_practice.Controllers
             return View(content);
         }
 
-        public ViewResult Create(int id)
+        public ViewResult Create(int categoryId)
         {
             DropDownList();
 
-            return View(new Content() {CategoryId = id});
+            return View(new Content() {CategoryId = categoryId });
         }
 
         [HttpPost]
         public ActionResult Create(Content model)
         {
-            contentRepo.Create(model);
-            
+            DropDownList();
+
             ViewBag.Result = "You made a new post";
 
             model.PublishDate = DateTime.Now;
 
-            DropDownList();
+            contentRepo.Create(model);
 
             return View();
         }
@@ -64,7 +64,7 @@ namespace blog_template_practice.Controllers
         public ViewResult CreateByCategoryId(int id)
         {
             DropDownList();
-
+                       
             return View(new Content() { CategoryId = id });
         }
 
@@ -93,24 +93,16 @@ namespace blog_template_practice.Controllers
             return View();
         }
 
-        [HttpPost]
-        public ActionResult Delete(Content model)
-        {
-            
 
-            contentRepo.Delete(model);
 
-            return RedirectToAction("Index");
-        }
-
-        public ViewResult Delete(int id)
+        public ActionResult Delete(int id)
         {
 
             var content = contentRepo.GetById(id);
 
             contentRepo.Delete(content);
-            
-            return View(content);
+
+            return RedirectToAction("Details", "Category", new { id = content.CategoryId});
         }
         
 

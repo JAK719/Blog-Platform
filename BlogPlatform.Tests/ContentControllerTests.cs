@@ -111,32 +111,32 @@ namespace blog_template_practice.Tests
             Assert.IsAssignableFrom<ActionResult>(result);
         }
 
-        [Fact]
-        public void Delete_Returns_ViewResult()
-        {
-            var result = sut.Delete(1);
+        //[Fact]
+        //public void Delete_Returns_ViewResult()
+        //{
+        //    var result = sut.Delete(1);
 
-            Assert.IsType<ViewResult>(result);
-        }
+        //    Assert.IsType<ViewResult>(result);
+        //}
 
-        [Fact]
-        public void Delete_Passes_Content_To_View()
-        {
-            var expectedContent = new Content();
-            contentRepo.GetById(1).Returns(expectedContent);
+        //[Fact]
+        //public void Delete_Passes_Content_To_View()
+        //{
+        //    var expectedContent = new Content();
+        //    contentRepo.GetById(1).Returns(expectedContent);
 
-            var result = sut.Delete(1);
+        //    var result = sut.Delete(1);
 
-            Assert.Equal(expectedContent, result.Model);
-        }
+        //    Assert.Equal(expectedContent, result.Model);
+        //}
 
-        [Fact]
-        public void Delete_Post_Returns_ActionResult()
-        {
-            var result = sut.Delete(new Content());
+        //[Fact]
+        //public void Delete_Post_Returns_ActionResult()
+        //{
+        //    var result = sut.Delete(new Content());
 
-            Assert.IsAssignableFrom<ActionResult>(result);
-        }
+        //    Assert.IsAssignableFrom<ActionResult>(result);
+        //}
 
     }
 }

@@ -18,7 +18,7 @@
     <hr />
     <div class="row">
         <div class="col-md-4">
-            <form asp-action="CreateByCategoryId">
+            <form asp-action="Create">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <div class="form-group">
                     <label asp-for="Title" class="control-label"></label>
@@ -48,8 +48,6 @@
 
     <div>
         <a href="/Category/Details/@Model.CategoryId">Back to List</a>
-        @*<a href="/Category/Details/@Model.Category.Id">Back to List</a>*@
-
     </div>
 
     @section Scripts {

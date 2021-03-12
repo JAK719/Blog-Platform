@@ -51,14 +51,14 @@ namespace blog_template_practice.Controllers
         public ActionResult Create(Content model)
         {
             DropDownList();
+           
+            model.PublishDate = DateTime.Now;
 
             ViewBag.Result = "You made a new post";
 
-            model.PublishDate = DateTime.Now;
-
             contentRepo.Create(model);
 
-            return View();
+            return View(model);
         }
 
         public ViewResult CreateByCategoryId(int id)
@@ -82,15 +82,15 @@ namespace blog_template_practice.Controllers
         [HttpPost]
         public ViewResult Update(Content model)
         {
+            model.PublishDate = DateTime.Now;
+           
             contentRepo.Update(model);
             
             ViewBag.Result = "You updated your post.";
 
-            model.PublishDate = DateTime.Now;
-
             DropDownList();
 
-            return View();
+            return View(model);
         }
 
 

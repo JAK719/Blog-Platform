@@ -30,6 +30,8 @@ namespace blog_template_practice
             services.AddDbContext<BlogContext>();
             services.AddScoped<IRepository<Content>, ContentRepository>();
             services.AddScoped<IRepository<Category>, CategoryRepository>();
+            services.AddControllersWithViews().AddRazorRuntimeCompilation();
+
 
         }
 

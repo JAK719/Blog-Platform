@@ -14,7 +14,7 @@ namespace blog_template_practice
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            var connectionString = "Server=(localdb)\\mssqllocaldb;Database=BlogDB_templatetest;Trusted_Connection=True;MultipleActiveResultSets=true;";
+            var connectionString = "Server=(localdb)\\mssqllocaldb;Database=BlogDB;Trusted_Connection=True;MultipleActiveResultSets=true;";
 
             optionsBuilder.UseSqlServer(connectionString)
                 .UseLazyLoadingProxies();
@@ -51,10 +51,10 @@ namespace blog_template_practice
                 {
                    Id = 1,
                    Title = "I like Pizza",
-                   Author = "Jason Kepic",
+                   Author = "AsonJay EpicKay",
                     PublishDate = DateTime.Now,
                     CategoryId = 1,
-                   Body = "I like pizza because it's delicous.  My favorite is Edison's Pizza in Tremont.  You should try it out."
+                   Body = "I like pizza because it's delicous.  My favorite is Edison's Pizza in Tremont.  Just get me a hot slice of pepperoni from Edison's and I am a happy man."
                 },
                 new Content()
                 {
@@ -63,25 +63,25 @@ namespace blog_template_practice
                    Author = "ShMason ShMepic",
                     PublishDate = DateTime.Now,
                     CategoryId = 3,
-                   Body = "I enjoy watching MMA, the UFC in particular.  I enjoy the dedication the fighters put towards the craft and the problem-solving that goes into picking apart another fighter, as well as watching the adjustments they have to make live in the fight.  I also enjoy the sportsmanship.  It's incredible to see 2 fighters beat up on each other and then hug it out afterwards."
+                   Body = "I enjoy watching MMA, the UFC in particular.  I enjoy the dedication the fighters put towards the craft and the problem-solving that goes into picking apart another fighter, as well as watching the adjustments they have to make live in the fight.  There's also incredible sportsmanship.  Sure, there are exceptions when it comes to sportsmanship.  But, for the most part you're always going to see 2 fighters shake hands and hug it out after a beating on each other."
                 },
                 new Content()
                 {
                    Id = 3,
                    Title = "I like Camping",
-                   Author = "AsonJay EpicKay",
+                   Author = "Jason Kepic",
                     PublishDate = DateTime.Now,
                     CategoryId = 2,
-                   Body = "Camping is neat.  I enjoy hanging a hammock in the trees and listening to the sounds of nature.  Fire is cool too, and smells nice.  Renting a boat and cruising the lake is also quite enjoyable.  I'd like to get my onw boat someday, but renting them is fun for now."
+                   Body = "Camping is neat.  I enjoy hanging a hammock in the trees and listening to the sounds of nature.  Fire is cool too, and smells nice.  Renting a boat and cruising the lake is also quite enjoyable.  Hopefully I'll end up making stacks of cash as a software developer and be able to buy my own boat someday, but renting them is fun for now."
                 },
                 new Content()
                 {
                    Id = 4,
-                   Title = "I like Football",
+                   Title = "Soccer...",
                    Author = "ShMason ShMepic",
                     PublishDate = DateTime.Now,
                     CategoryId = 3,
-                   Body = "I enjoy watching football.  Tailgating is neat.  Fantasy football is fun too."
+                   Body = "Soccer...  What's there to say?  I definitely appreciate the skill and conditioning it takes to play the sport.  I'll never say soccer players aren't exceptional athletes.  But, 90 minutes plus stoppage time added on with a final score of 1-0... No thank you!"
                 },
                 new Content()
                 {

@@ -8,7 +8,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Details</title>
+    <title>Jason's Random Blog</title>
     <link rel="stylesheet" type="text/css" href="~/styles/MainStyleSheet.css" />
 </head>
 <body>
@@ -20,18 +20,26 @@
     </header>
 
     <nav>
-        <a href="/Category/Index/">Home</a>
-        <a href="/Content/Create/">Write a Post</a>
+        <div class="navContent">
+            
+            <button onclick="window.location.href='/Content/Create/'" id="navBtn">Write A Post</button>
+        </div>
     </nav>
 
-    <hr />
-
-    @foreach (var category in Model)
-    {
-        <h2><a href="/Category/Details/@category.Id">@category.Name</a></h2>
-    }
+    <main>
+        <div class="topicsBox">
+            @foreach (var category in Model)
+            {
+            <div class="tpcBtns">
+                <button onclick="window.location.href='/Category/Details/@category.Id'" id="topicBtn">
+                    <h2>@category.Name</h2>
+                </button>
+            </div>
+                }
+        </div>
+    </main>
 
 
 </body>
 </html>
-<hr />
+

@@ -13,24 +13,40 @@
     <link rel="stylesheet" type="text/css" href="~/styles/MainStyleSheet.css"/>
 </head>
 <body>
+    <header>
+        <div class="headerContent">
+            <h1>@Model.Name</h1>
+            <h2></h2>
+        </div>
+    </header>
+
+    <nav>
+        <div class="navContent">
+            <button onclick="window.location.href='/Category/Index/'" id="navBtn">Home</button>
+            <button onclick="window.location.href='/Content/CreateByCategoryId/@Model.Id'" id="navBtn">Write a Post</button>
+        </div>
+    </nav>
 
 
 
+<main>
     @foreach (var content in Model.Content)
     {
-        <h2>@content.Title</h2>
-        <p>@content.Author</p>
-        <p>@content.Body</p>
-        <p>@content.PublishDate</p>
-        <a href="/Content/Update/@content.Id">Update</a>
-        <a href="/Content/Delete/@content.Id">Delete</a>
+    <article>
+        <div class="contentBox">
+            <h2>@content.Title</h2>
+            <h3>@content.Author</h3>
+            <p>@content.Body</p>
+            <p>@content.PublishDate</p>
+            <div class="Btns">
+               <button onclick="window.location.href='/Content/Update/@content.Id'" id="contBtn">Update</button>
+                <button onclick="window.location.href='/Content/Delete/@content.Id'" id="contBtn">Delete</button>
+            </div>
+        </div>
+    </article>
     }
-    <p>
-        <a href="/Content/CreateByCategoryId/@Model.Id">Write a Post</a>
-    </p>
-    <p>
-        <a href="/Category/Index">Back to List</a>
-    </p>
+</main>
+  
 
 
 

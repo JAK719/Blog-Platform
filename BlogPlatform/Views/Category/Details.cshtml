@@ -1,0 +1,54 @@
+﻿@model blog_template_practice.Models.Category
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+    <link rel="stylesheet" type="text/css" href="~/styles/MainStyleSheet.css"/>
+</head>
+<body>
+    <header>
+        <div class="headerContent">
+            <h1>@Model.Name</h1>
+            <h2></h2>
+        </div>
+    </header>
+
+    <nav>
+        <div class="navContent">
+            <button onclick="window.location.href='/Category/Index/'" id="navBtn">Home</button>
+            <button onclick="window.location.href='/Content/CreateByCategoryId/@Model.Id'" id="navBtn">Write a Post</button>
+        </div>
+    </nav>
+
+
+
+<main>
+    @foreach (var content in Model.Content)
+    {
+    <article>
+        <div class="contentBox">
+            <h2>@content.Title</h2>
+            <h3>@content.Author</h3>
+            <p>@content.Body</p>
+            <p>@content.PublishDate</p>
+            <div class="Btns">
+               <button onclick="window.location.href='/Content/Update/@content.Id'" id="contBtn">Update</button>
+                <button onclick="window.location.href='/Content/Delete/@content.Id'" id="contBtn">Delete</button>
+            </div>
+        </div>
+    </article>
+    }
+</main>
+  
+
+
+
+</body>
+</html>

@@ -16,6 +16,20 @@ namespace blog_template_practice.Controllers
         {
             this.categoryRepo = categoryRepo;
         }
+        [HttpGet]
+        public ViewResult Index()
+        {
+            var catList = categoryRepo.GetAll();
 
+            return View(catList);
+        }
+
+        public ViewResult Details(int id)
+        {
+            var category = categoryRepo.GetById(id);
+
+            return View(category);
+        }
+      
     }
 }
